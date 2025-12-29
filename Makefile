@@ -6,3 +6,6 @@ install: ## Install the python requirements.
 
 migrate: ## Migrate Django models
 	python manage.py migrate
+
+user: ## Create a super-user to access Django-admin
+	python manage.py createsuperuser
