@@ -3,3 +3,6 @@ run: ## Run the test server.
 
 install: ## Install the python requirements.
 	pip install -r requirements.txt
+
+migrate: ## Migrate Django models
+	python manage.py migrate
