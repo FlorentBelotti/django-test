@@ -1,6 +1,24 @@
+# DB Diagram
+
+https://dbdiagram.io/d/django-test-69505ef039fa3db27ba5a9b9
+
+# To do list
+
+- OK 1 BusShift === 1 Bus
+- OK 1 BusShift === 1 Driver
+- OK 1 BusShift === N ordered BusStop (N>=2)
+- OK 1 BusStop === 1 Place
+- OK 1 BusStop === 1 passage_time
+- OK First passage_time of BusShift === passage_time of first BusStop
+- OK Last passage_time of BusShift === passage_time of last BusStop
+- OK Calculate total duration of BusShift from first and last stop
+- OK 1 Bus === 0 or 1 Busshift at the same time
+- OK 1 Driver === 0 or 1 Busshift at the same time
+- OK Creation / modification in django admin
+
 # Django technical test / Backend (English version first, French version below)
 
-The objective of the exercise below is to model a database based on business specifications and to 
+The objective of the exercise below is to model a database based on business specifications and to
 design a simple interface for managing bus routes, using Django admin.
 
 To carry out the test, remember to fork this repository. Ideally, open a PR at the end.
@@ -18,7 +36,7 @@ To carry out the test, remember to fork this repository. Ideally, open a PR at t
 | Python | 3.9 |
 | Django | 4.2.16 |
 
-- This project was created using Python 3.7. You are free to use another version, but this is the one we recommend. 
+- This project was created using Python 3.7. You are free to use another version, but this is the one we recommend.
 recommended.
 - The database is freely selectable. The project is configured to use `sqlite` by default.
 
@@ -32,7 +50,7 @@ make migrate
 make run
 ```
 
-Scripts are available to help you quickly create data and take control of the project. 
+Scripts are available to help you quickly create data and take control of the project.
 in hand:
 
 - `create_data`
@@ -70,10 +88,10 @@ The proposed project structure already includes the following models:
 
 #### Implement the `BusShift` and `BusStop` models in the existing code base
 
-The implementation of these two models is up to you. The following business constraints 
+The implementation of these two models is up to you. The following business constraints
 must be respected:
 
-- The same bus cannot be assigned to several routes at the same time, with overlapping start and end times. 
+- The same bus cannot be assigned to several routes at the same time, with overlapping start and end times.
 overlap.
 - The same applies to drivers.
 
@@ -83,7 +101,7 @@ It must be possible for a user to create or modify bus routes (`BusShift`) using
 interface.
 
 **Note**: There are several ways of designing this functionality. Some may be more time-consuming
-more time-consuming than others... 
+more time-consuming than others...
 
 
 
@@ -102,7 +120,7 @@ more time-consuming than others...
 
 # Test technique Django / Backend
 
-L'objectif de l'exercice ci-dessous est de modéliser une base de données à partir de spécifications métiers et de 
+L'objectif de l'exercice ci-dessous est de modéliser une base de données à partir de spécifications métiers et de
 concevoir une interface simple de gestion de trajets de bus, en utilisant l'admin de Django.
 
 Pour réaliser le test, pensez à fork ce repository. Idéalement, ouvrir une PR à la fin.
@@ -120,7 +138,7 @@ Pour réaliser le test, pensez à fork ce repository. Idéalement, ouvrir une PR
 | Python | 3.9     |
 | Django | 4.2.16  |
 
- - Le projet à été réalisé en utilisant Python 3.7. Vous êtes libre d'utiliser une autre version mais c'est celle que 
+ - Le projet à été réalisé en utilisant Python 3.7. Vous êtes libre d'utiliser une autre version mais c'est celle que
  nous vous conseillons.
  - La base de donnée est au choix. Le projet est configuré pour utiliser `sqlite` par défaut.
 
@@ -134,7 +152,7 @@ make migrate
 make run
 ```
 
-Des scripts sont à votre disposition pour vous permettre de rapidement créer de la donnée et de prendre le projet en 
+Des scripts sont à votre disposition pour vous permettre de rapidement créer de la donnée et de prendre le projet en
 main:
 
  - `create_data`
@@ -172,10 +190,10 @@ La structure de projet qui vous est proposée comprends déjà les models suivan
 
 #### Implémenter les modèles `BusShift` and `BusStop` à la base de code existante
 
-L'implémentation de ces deux modèles est libre et laissée à votre appréciation. Les contraintes métiers suivantes 
+L'implémentation de ces deux modèles est libre et laissée à votre appréciation. Les contraintes métiers suivantes
 doivent être respectées:
 
- - Un même bus ne peut être assigné, en même temps, à plusieurs trajets dont les heures de début et fin se 
+ - Un même bus ne peut être assigné, en même temps, à plusieurs trajets dont les heures de début et fin se
  chevaucheraient.
  - Il en va de même pour les chauffeurs.
 
@@ -185,7 +203,7 @@ Il doit être possible, pour un utilisateur, de créer ou de modifier des trajet
 de django.
 
 **Note**: Il existe plusieurs solutions pour concevoir cette fonctionnalité. Certaines seront peut être plus couteuse
-en temps que d'autres ... 
+en temps que d'autres ...
 
 ### Conseils
 
